@@ -20,12 +20,7 @@
 #   template => 'example42/postfix/mastercf.erb'
 # }
 #
-class postfix::mastercf (
-  $source   = params_lookup( 'source' ),
-  $template = params_lookup( 'template' ),
-) {
-  include postfix
-
+class postfix::mastercf inherits postfix {
   $manage_file_source = $source ? {
     ''        => undef,
     default   => $source,

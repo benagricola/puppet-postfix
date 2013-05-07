@@ -33,16 +33,11 @@
 #   }
 # }
 #
-class postfix::aliases (
-  $source   = params_lookup( 'source' ),
-  $template = params_lookup( 'template' ),
-  $maps     = params_lookup( 'maps' ),
-) {
-  include postfix
+class postfix::aliases inherits postfix (
 
-  $manage_file_source = $source ? {
+  $manage_file_source = $postfix::aliases_source ? {
     ''        => undef,
-    default   => $source,
+    default   => $postfix::aliases_source,
   }
 
   $manage_file_content = $template ? {
