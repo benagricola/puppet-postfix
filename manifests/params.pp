@@ -16,79 +16,79 @@ class postfix::params {
 
   ### Application related parameters
 
-  $package = hiera('postfix::package',$::operatingsystem ? {)
+  $package = hiera('postfix::package',$::operatingsystem ? {
     default => 'postfix',
   })
 
-  $service = hiera('postfix::service',$::operatingsystem ? {)
+  $service = hiera('postfix::service',$::operatingsystem ? {
     default => 'postfix',
   })
 
-  $service_status = hiera('postfix::service_status',$::operatingsystem ? {)
+  $service_status = hiera('postfix::service_status',$::operatingsystem ? {
     default => true,
   })
 
-  $process = hiera('postfix::process',$::operatingsystem ? {)
+  $process = hiera('postfix::process',$::operatingsystem ? {
     default => 'master',
   })
 
-  $process_args = hiera('postfix::process_args',$::operatingsystem ? {)
+  $process_args = hiera('postfix::process_args',$::operatingsystem ? {
     default => '',
   })
 
-  $process_user = hiera('postfix::process_user',$::operatingsystem ? {)
+  $process_user = hiera('postfix::process_user',$::operatingsystem ? {
     default => 'postfix',
   })
 
-  $config_dir = hiera('postfix::config_dir',$::operatingsystem ? {)
+  $config_dir = hiera('postfix::config_dir',$::operatingsystem ? {
     default => '/etc/postfix',
   })
 
-  $config_file = hiera('postfix::config_file',$::operatingsystem ? {)
+  $config_file = hiera('postfix::config_file',$::operatingsystem ? {
     default => '/etc/postfix/main.cf',
   })
 
-  $config_file_mode = hiera('postfix::config_file_mode',$::operatingsystem ? {)
+  $config_file_mode = hiera('postfix::config_file_mode',$::operatingsystem ? {
     default => '0644',
   })
 
-  $config_file_owner = hiera('postfix::config_file_owner',$::operatingsystem ? {)
+  $config_file_owner = hiera('postfix::config_file_owner',$::operatingsystem ? {
     default => 'root',
   })
 
-  $config_file_group = hiera('postfix::config_file_group',$::operatingsystem ? {)
+  $config_file_group = hiera('postfix::config_file_group',$::operatingsystem ? {
     default => 'root',
   })
 
-  $config_file_init = hiera('postfix::config_file_init',$::operatingsystem ? {)
+  $config_file_init = hiera('postfix::config_file_init',$::operatingsystem ? {
     /(?i:Debian|Ubuntu|Mint)/ => '/etc/default/postfix',
     default                   => '/etc/sysconfig/postfix',
   })
 
-  $pid_file = hiera('postfix::pid_file',$::operatingsystem ? {)
+  $pid_file = hiera('postfix::pid_file',$::operatingsystem ? {
     default => '/var/spool/postfix/pid/master.pid',
   })
 
-  $data_dir = hiera('postfix::data_dir',$::operatingsystem ? {)
+  $data_dir = hiera('postfix::data_dir',$::operatingsystem ? {
     default => '/var/spool/postfix',
   })
 
-  $log_dir = hiera('postfix::log_dir',$::operatingsystem ? {)
+  $log_dir = hiera('postfix::log_dir',$::operatingsystem ? {
     default => '',
   })
 
-  $log_file = hiera('postfix::log_file',$::operatingsystem ? {)
+  $log_file = hiera('postfix::log_file',$::operatingsystem ? {
     /(?i:Debian|Ubuntu|Mint)/ => '/var/log/mail.log',
     default                   => '/var/log/postfix/postfix.log',
   })
 
   $aliases_source = hiera('postfix::aliases_source',undef)
 
-  $aliases_file = hiera('postfix::aliases_file',$::operatingsystem ? {)
+  $aliases_file = hiera('postfix::aliases_file',$::operatingsystem ? {
     default => '/etc/aliases',
   })
 
-  $mastercf_file = hiera('postfix::mastercf_file',$::operatingsystem ? {)
+  $mastercf_file = hiera('postfix::mastercf_file',$::operatingsystem ? {
     default => '/etc/postfix/master.cf',
   })
 
