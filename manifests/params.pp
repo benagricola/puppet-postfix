@@ -117,7 +117,7 @@ class postfix::params {
   $firewall_tool = hiera('postfix::firewall_tool',hiera("firewall_tool",""))
   $firewall_src = hiera('postfix::firewall_src','0.0.0.0/0')
   $firewall_dst = hiera('postfix::firewall_dst',$::ipaddress)
-  $puppi = hiera('postfix::puppi',,hiera("puppi",false))
+  $puppi = hiera('postfix::puppi',hiera("puppi",false))
   $puppi_helper = hiera('postfix::puppi_helper','standard')
   $debug = hiera('postfix::debug',false)
   $audit_only = hiera('postfix::audit_only',false)
