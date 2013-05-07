@@ -33,7 +33,7 @@
 #   }
 # }
 #
-class postfix::aliases inherits postfix (
+class postfix::aliases inherits postfix {
 
   $manage_file_source = $postfix::aliases_source ? {
     ''        => undef,
